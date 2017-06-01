@@ -1,0 +1,17 @@
+{
+  "name": "ml2",
+  "version": "1.0.0",
+  "description": "mercadolibre 2",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "browserwithphantom": "^2.0.55",
+    "express": "^4.15.3",
+    "mongojs": "^2.4.0"
+  }
+}
