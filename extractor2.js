@@ -49,14 +49,15 @@ return  mybrowser.ready()
 };
 db.categories.find({},{},(err,docs)=>{
   let tasks=[];
-  docs.forEach(categories=>{
-    task.push(new Promise((resolve, reject)=>{
+  docs.forEach(category=>{
+    tasks.push(new Promise((resolve, reject)=>{
       return scrap(category.href, category._id);
     }))
   });
+  Promise.all(tasks)
+  .then(()=>{
+    console.log('All end');
+    db.close();
+  })
+
 });
-Promise.all(tasks)
-.then(()=>{
-  console.log('All end');
-  db.close();
-})
